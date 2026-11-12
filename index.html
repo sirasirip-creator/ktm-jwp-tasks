@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>งาน Ktm x Jwp x irori</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Ktm x Jwp x irori</div>
+      <h1>งานก่อสร้าง</h1>
+    </div>
+    <div id="me" class="me"></div>
+  </div>
+  <div id="countdown" class="countdown"></div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="mine" class="on">งานของฉัน</button>
+    <button data-tab="all">ทั้งหมด</button>
+    <button data-tab="recent">อัปเดตล่าสุด</button>
+    <button data-tab="users" class="admin-only" hidden>ผู้ใช้</button>
+  </nav>
+</header>
+
+<main id="main"><div class="loading">กำลังโหลด…</div></main>
+
+<button id="fab" class="fab" hidden aria-label="เพิ่มงาน">＋</button>
+<div id="sendbar" class="sendbar" hidden>
+  <span id="sendcount"></span>
+  <button id="sendbtn" class="btn primary">ส่งเข้ากลุ่ม LINE</button>
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-body" role="dialog" aria-modal="true">
+    <button class="sheet-x" data-close aria-label="ปิด">✕</button>
+    <div id="sheet-content"></div>
+  </div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
