@@ -54,7 +54,7 @@ const isAdmin = () => S.me?.role === "admin";
 const canEdit = (t) => isAdmin() || (S.me?.role === "editor" && t.owners.some((o) => o.nickname === S.me.nickname));
 const owners = (t) => t.owners.map((o) => o.nickname).join(", ") || "-";
 const shortTitle = (t) => (t.category && t.title.startsWith(t.category + ": ") ? t.title.slice(t.category.length + 2) : t.title);
-const linkify = (s) => esc(s).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+const linkify = (s) => esc(s).replace(/(https?:\/\/[^\s<]+)/g, (u) => `<a href="${u}" target="_blank" rel="noopener">${/wisprflow/.test(u) ? "เปิดบันทึกประชุม ↗" : "เปิดลิงก์ ↗"}</a>`);
 const catOrder = (c) => { const i = S.categories.indexOf(c); return i < 0 ? 99 : i; };
 function sortTasks(list) {
   return [...list].sort((a, b) =>
