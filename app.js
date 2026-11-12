@@ -127,7 +127,7 @@ function statusFilter(list) {
 
 function renderMine() {
   if (!S.me.nickname) return `<div class="empty">ยังไม่ได้ผูกชื่อกับบัญชี LINE นี้<br>แจ้งสโตนให้ตั้งชื่อในหน้า "ผู้ใช้"</div>`;
-  const mine = S.tasks.filter((t) => t.owners.some((o) => o.nickname === S.me.nickname)));
+  const mine = S.tasks.filter((t) => t.owners.some((o) => o.nickname === S.me.nickname));
   return stats(mine) + filtersHtml(false) + grouped(statusFilter(mine));
 }
 
