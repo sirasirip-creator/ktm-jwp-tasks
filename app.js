@@ -394,7 +394,10 @@ async function boot() {
     await render();
     if (want) openTask(Number(want));
   } catch (e) {
-    if (e.message !== "login") $("#main").innerHTML = `<div class="empty">เปิดไม่สำเร็จ: ${esc(e.message)}</div>`;
+    if (e.message === "blocked") {
+      $("#tabs").hidden = true;
+      $("#main").innerHTML = `<div class="empty">บัญชี LINE นี้ไม่มีสิทธิ์เข้าดูงาน<br><span class="note">ถ้าคิดว่าผิดพลาด แจ้งสโตนในกลุ่มได้เลย</span></div>`;
+    } else if (e.message !== "login") $("#main").innerHTML = `<div class="empty">เปิดไม่สำเร็จ: ${esc(e.message)}</div>`;
   }
 }
 boot();
